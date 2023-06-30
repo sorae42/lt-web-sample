@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Đăng Nhập</title>
+</head>
+
+<body>
+    <div class="DangNhap">
+        <h2>Đăng Nhập</h2>
+        <input class="INPUT" type="text" placeholder="Tài Khoản" id="username" />
+        <input class="INPUT" type="password" placeholder="Mật Khẩu" id="password" /><br />
+        <input class="INPUT_NHOMATKHAU" type="checkbox" /><label>Nhớ mật khẩu</label><br />
+        <button class="BUTTON_DANGNHAP" type="button" id="login-btn">Đăng Nhập</button>
+    </div>
+
+    <script>
+        document.getElementById("login-btn").addEventListener("click", () => {
+            let username = document.getElementById("username").value;
+            let password = document.getElementById("password").value;
+            if (username === "hvlam" && password === "123456") {
+                alert("Login successful");
+                return;
+            }
+            alert("Login failed.");
+        });
+    </script>
+
+    <style>
+        h2 {
+            margin-left: 10px;
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .DangNhap {
+            border: 1px solid black;
+            height: 300px;
+            width: 300px;
+        }
+
+        .INPUT {
+            height: 30px;
+            width: 250px;
+            margin-left: 10px;
+            margin-bottom: 10px;
+        }
+
+        .BUTTON_DANGNHAP {
+            margin-left: 10px;
+            margin-bottom: 10px;
+            background-color: rgb(71, 71, 225);
+            color: white;
+            height: 30px;
+            width: 159px;
+        }
+
+        .INPUT_NHOMATKHAU {
+            margin-left: 10px;
+            margin-bottom: 10px;
+        }
+    </style>
+</body>
+
+</html>

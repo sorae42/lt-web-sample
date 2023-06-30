@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer</title>
+</head>
+
+<body>
+    <div>
+        <input type="text" name="min" id="min" placeholder="min">
+        <input type="text" name="sec" id="sec" placeholder="sec">
+        <button type="button" id="start-btn">Start</button>
+    </div>
+
+    <div>
+        <p>Timer left</p>
+        <p style="font-size: large;" id="timer">0:00</p>
+    </div>
+
+    <script>
+        document.getElementById("start-btn").addEventListener("click", () => {
+            var min = document.getElementById("min").value;
+            var sec = document.getElementById("sec").value;
+            var timer = setInterval(() => {
+                sec -= 1;
+                if (sec < 0) {
+                    if (min == 0) {
+                        clearInterval(timer);
+                        return;
+                    }
+                    sec = 59;
+                    min -= 1;
+                }
+                document.getElementById("timer").innerText = `${min}:${('0' + sec).slice(-2)}`;
+            }, 1000);
+        });
+    </script>
+</body>
+
+</html>

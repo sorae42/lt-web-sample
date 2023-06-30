@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eligibility</title>
+</head>
+
+<body>
+    <p>Kiểm tra tính hợp lệ của thông tin nhập vào</p>
+
+    <label for="name">Name:</label>
+    <input type="text" name="nam" id="name">
+
+    <label for="age">Age:</label>
+    <input type="text" name="age" id="age">
+
+    <button type="button" id="submit" onclick="checkEligible()">Submit</button>
+
+    <p id="message"></p>
+
+    <script>
+        function checkEligible() {
+            let name = document.getElementById("name").value;
+            let age = document.getElementById("age").value;
+
+            let message = document.getElementById("message");
+
+            if (name == "" || age == "") {
+                message.innerText = "Vui lòng nhập thông tin!!";
+                return;
+            }
+
+            if (/\W+/g.test(name)) {
+                message.innerText = "Tên không hợp lệ! (Không hỗ trợ dấu tiếng Việt)";
+                return;
+            }
+
+            if (/\D+/g.test(age)) {
+                message.innerText = "Tuổi không hợp lệ!";
+                return;
+            }
+
+            message.innerText = "Thông tin hợp lệ!";
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.header img {
+    width: 100%;
+    height: 200px;
+}
+
+.nav {
+    background-color: chocolate;
+    color: white;
+    width: 100%;
+    height: 35px;
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.sidebar {
+    width: 220px;
+    display: inline-block;
+}
+
+.sidebar .green {
+    background-color: lightgreen;
+}
+
+.sidebar li {
+    border: 1px solid;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 4px;
+}
+
+.content {
+    width: 80%;
+    float: right;
+}
+
+.phan_giua {
+    list-style: none;
+}
+
+
+.phan_giua > li {
+    display: inline-block;
+}
